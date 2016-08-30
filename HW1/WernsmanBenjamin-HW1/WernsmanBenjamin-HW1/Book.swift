@@ -75,7 +75,7 @@ class Book{
     
     //Return all the values as a String
     func description() -> String{
-        return "Title: " + self.title + "\n# Pages: " + String(self.numberOfPages) + "\nBook Type: " + self.bookType + "\nPrice: " + String(self.price)
+        return "Title: \"" + self.title + "\"\n# Pages: " + String(self.numberOfPages) + "\nBook Type: " + self.bookType + "\nPrice: " + String(self.price)
      }
     
     //Create a book and return it
