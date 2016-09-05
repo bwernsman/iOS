@@ -12,14 +12,13 @@ import Foundation
 
 //Define variables for Books (books storage, title, author, number of pages, type of book and the price)
 var bookObjects:[Book] = []
-var titles:[String] = ["Moby Dick","Harry Potter and the Goblet of Fire","Justin Bieber: a Biography","Simple iOS Programming in Swift"]
-var authors:[String] = ["Herman Melville", "J.K. Rowling", "Selena Gomez", "Bill Bulko"]
-var pageNumbers:[Int] = [1834,523,13,2145]
-var bookType:[String] = ["softcover","hardcover","eBook","hardcover"]
-var prices:[Float] = [10.00, 11.00, 12.00, 13.00]
+var titles:[String] = ["Pride and Prejudice","The Two Towers","The Lion, the Witch and the Wardrobe","The Bell Jar"]
+var authors:[String] = ["Jane Austen", "J.R.R. Tolkien", "C.S. Lewis", "Sylvia Plath"]
+var pageNumbers:[Int] = [1214,624,245,2145]
+var bookType:[String] = ["hardcover","softcover","eBook","eBook"]
+var prices:[Float] = [10.00, 11.00, 12.00, 11.50]
 
 //Used to calculate the percentage increase in cost of a book
-//Changed var to let??!
 func randomUIntInRange(min:UInt32, max:UInt32) -> UInt32 {
     let randomValue:UInt32 = min + arc4random_uniform(UInt32(max - min + 1))
     return randomValue
