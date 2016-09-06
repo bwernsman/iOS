@@ -40,13 +40,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhj-3F-3OM">
-                                <rect key="frame" x="168" y="341" width="38" height="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vht-fx-KHL"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not currently logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-LL-8pO">
                                 <rect key="frame" x="99" y="406" width="176" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -59,6 +52,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pz-oN-E5m">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ITl-ty-IhV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -67,19 +67,43 @@
                             <constraint firstItem="h1u-b5-Niy" firstAttribute="centerY" secondItem="JGd-Lx-cj3" secondAttribute="centerY" id="4mW-ei-wGQ"/>
                             <constraint firstItem="LBp-y3-pB7" firstAttribute="leading" secondItem="p3J-5H-eS0" secondAttribute="trailing" constant="8" symbolic="YES" id="6S7-wY-lYx"/>
                             <constraint firstItem="LBp-y3-pB7" firstAttribute="leading" secondItem="JGd-Lx-cj3" secondAttribute="leading" id="7PP-dY-663"/>
+                            <constraint firstItem="1Pz-oN-E5m" firstAttribute="centerX" secondItem="dVb-tG-d0W" secondAttribute="centerX" id="BFz-3z-sBc"/>
                             <constraint firstItem="LBp-y3-pB7" firstAttribute="trailing" secondItem="JGd-Lx-cj3" secondAttribute="trailing" id="D1p-JC-4MK"/>
                             <constraint firstItem="JGd-Lx-cj3" firstAttribute="top" secondItem="LBp-y3-pB7" secondAttribute="bottom" constant="52" id="Eyb-Ju-ouL"/>
-                            <constraint firstItem="Vhj-3F-3OM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVB-e1-gt4"/>
-                            <constraint firstItem="Zqe-LL-8pO" firstAttribute="top" secondItem="Vhj-3F-3OM" secondAttribute="bottom" constant="35" id="N2M-Ik-lle"/>
+                            <constraint firstItem="1Pz-oN-E5m" firstAttribute="top" secondItem="JGd-Lx-cj3" secondAttribute="bottom" constant="81" id="Fg7-gv-s6n"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LBp-y3-pB7" secondAttribute="trailing" constant="9" id="NuI-oL-vL9"/>
+                            <constraint firstItem="1Pz-oN-E5m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OUp-zT-XBb"/>
                             <constraint firstItem="dVb-tG-d0W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="OkU-pL-3Yf"/>
+                            <constraint firstItem="Zqe-LL-8pO" firstAttribute="top" secondItem="1Pz-oN-E5m" secondAttribute="bottom" constant="29" id="RYZ-Ls-by5"/>
                             <constraint firstItem="LBp-y3-pB7" firstAttribute="top" secondItem="dVb-tG-d0W" secondAttribute="bottom" constant="69" id="YWA-nE-BBm"/>
-                            <constraint firstItem="dVb-tG-d0W" firstAttribute="centerX" secondItem="Vhj-3F-3OM" secondAttribute="centerX" id="k8A-P0-Big"/>
+                            <constraint firstItem="1Pz-oN-E5m" firstAttribute="centerX" secondItem="Zqe-LL-8pO" secondAttribute="centerX" id="fw8-uU-FOq"/>
                             <constraint firstItem="p3J-5H-eS0" firstAttribute="centerY" secondItem="LBp-y3-pB7" secondAttribute="centerY" id="pWn-1j-sjM"/>
                             <constraint firstItem="JGd-Lx-cj3" firstAttribute="leading" secondItem="h1u-b5-Niy" secondAttribute="trailing" constant="8" symbolic="YES" id="qeX-GY-saU"/>
-                            <constraint firstItem="Vhj-3F-3OM" firstAttribute="top" secondItem="JGd-Lx-cj3" secondAttribute="bottom" constant="75" id="yIi-tr-VKH"/>
-                            <constraint firstItem="Vhj-3F-3OM" firstAttribute="centerX" secondItem="Zqe-LL-8pO" secondAttribute="centerX" id="ygm-Dw-nMN"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1Pz-oN-E5m"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BFz-3z-sBc"/>
+                                <exclude reference="Fg7-gv-s6n"/>
+                                <exclude reference="OUp-zT-XBb"/>
+                                <exclude reference="fw8-uU-FOq"/>
+                                <exclude reference="RYZ-Ls-by5"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1Pz-oN-E5m"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BFz-3z-sBc"/>
+                                <include reference="Fg7-gv-s6n"/>
+                                <include reference="OUp-zT-XBb"/>
+                                <include reference="fw8-uU-FOq"/>
+                                <include reference="RYZ-Ls-by5"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="4CN-bm-r1H" appends="YES" id="UBd-K9-pQy"/>
                         </connections>

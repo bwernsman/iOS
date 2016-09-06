@@ -1,6 +1,8 @@
 //
 //  ViewController.swift
 //  WernsmanBenjamin-HW2
+//  EID:  bw22494
+//  Course:  CS378
 //
 //  Created by Ben Wernsman on 9/6/16.
 //  Copyright © 2016 GlassFlag Studio. All rights reserved.
@@ -16,9 +18,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var status: UILabel!
     
     //Login button action (when the button gets pressed)
-    @IBAction func loginBtn(sender: AnyObject) {
+    @IBAction func buttonPressed(sender: AnyObject) {
+        print("hello")
         checkLogin()
     }
+
+
     
     //Bring up the keyboard when the view loads and let the user start typing in the user ID field
     //Set delegates so the user can hit "next" to go to the next text field
@@ -43,8 +48,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Check if the login was valid
+    //Make sure a username can't be spaces (Ex: "  ")
     func checkLogin(){
-        if(userID.text != "" && password.text != ""){
+        if(userID.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && password.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""){
             status.text = "\(userID.text!) logged in"
         } else {
             status.text = "Invalid login"
