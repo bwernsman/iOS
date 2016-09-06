@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WernsmanBenjamin_HW2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVb-tG-d0W">
+                                <rect key="frame" x="146" y="64" width="83" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LBp-y3-pB7">
+                                <rect key="frame" x="95" y="154" width="255" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JGd-Lx-cj3">
+                                <rect key="frame" x="95" y="236" width="255" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1u-b5-Niy">
+                                <rect key="frame" x="8" y="240" width="79" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhj-3F-3OM">
+                                <rect key="frame" x="168" y="341" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vht-fx-KHL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not currently logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zqe-LL-8pO">
+                                <rect key="frame" x="99" y="406" width="176" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="userID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3J-5H-eS0">
+                                <rect key="frame" x="32" y="158" width="55" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="h1u-b5-Niy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="2Bz-0c-ABb"/>
+                            <constraint firstItem="h1u-b5-Niy" firstAttribute="centerY" secondItem="JGd-Lx-cj3" secondAttribute="centerY" id="4mW-ei-wGQ"/>
+                            <constraint firstItem="LBp-y3-pB7" firstAttribute="leading" secondItem="p3J-5H-eS0" secondAttribute="trailing" constant="8" symbolic="YES" id="6S7-wY-lYx"/>
+                            <constraint firstItem="LBp-y3-pB7" firstAttribute="leading" secondItem="JGd-Lx-cj3" secondAttribute="leading" id="7PP-dY-663"/>
+                            <constraint firstItem="LBp-y3-pB7" firstAttribute="trailing" secondItem="JGd-Lx-cj3" secondAttribute="trailing" id="D1p-JC-4MK"/>
+                            <constraint firstItem="JGd-Lx-cj3" firstAttribute="top" secondItem="LBp-y3-pB7" secondAttribute="bottom" constant="52" id="Eyb-Ju-ouL"/>
+                            <constraint firstItem="Vhj-3F-3OM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVB-e1-gt4"/>
+                            <constraint firstItem="Zqe-LL-8pO" firstAttribute="top" secondItem="Vhj-3F-3OM" secondAttribute="bottom" constant="35" id="N2M-Ik-lle"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LBp-y3-pB7" secondAttribute="trailing" constant="9" id="NuI-oL-vL9"/>
+                            <constraint firstItem="dVb-tG-d0W" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="OkU-pL-3Yf"/>
+                            <constraint firstItem="LBp-y3-pB7" firstAttribute="top" secondItem="dVb-tG-d0W" secondAttribute="bottom" constant="69" id="YWA-nE-BBm"/>
+                            <constraint firstItem="dVb-tG-d0W" firstAttribute="centerX" secondItem="Vhj-3F-3OM" secondAttribute="centerX" id="k8A-P0-Big"/>
+                            <constraint firstItem="p3J-5H-eS0" firstAttribute="centerY" secondItem="LBp-y3-pB7" secondAttribute="centerY" id="pWn-1j-sjM"/>
+                            <constraint firstItem="JGd-Lx-cj3" firstAttribute="leading" secondItem="h1u-b5-Niy" secondAttribute="trailing" constant="8" symbolic="YES" id="qeX-GY-saU"/>
+                            <constraint firstItem="Vhj-3F-3OM" firstAttribute="top" secondItem="JGd-Lx-cj3" secondAttribute="bottom" constant="75" id="yIi-tr-VKH"/>
+                            <constraint firstItem="Vhj-3F-3OM" firstAttribute="centerX" secondItem="Zqe-LL-8pO" secondAttribute="centerX" id="ygm-Dw-nMN"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4CN-bm-r1H" appends="YES" id="UBd-K9-pQy"/>
+                        </connections>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="Password" destination="JGd-Lx-cj3" id="KP1-ip-VEa"/>
+                        <outlet property="status" destination="Zqe-LL-8pO" id="qef-7p-i96"/>
+                        <outlet property="userID" destination="LBp-y3-pB7" id="PsU-bp-Rfz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4CN-bm-r1H">
+                    <connections>
+                        <action selector="tapManager:" destination="BYZ-38-t0r" id="Pyf-UT-EFc"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="339.5" y="371.5"/>
+        </scene>
+    </scenes>
+</document>
