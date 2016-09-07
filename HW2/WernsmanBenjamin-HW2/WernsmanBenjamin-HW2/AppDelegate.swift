@@ -1,6 +1,8 @@
 //
 //  AppDelegate.swift
 //  WernsmanBenjamin-HW2
+//  EID:  bw22494
+//  Course:  CS378
 //
 //  Created by Ben Wernsman on 9/6/16.
 //  Copyright © 2016 GlassFlag Studio. All rights reserved.

@@ -19,11 +19,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //Login button action (when the button gets pressed)
     @IBAction func buttonPressed(sender: AnyObject) {
-        print("hello")
         checkLogin()
     }
-
-
     
     //Bring up the keyboard when the view loads and let the user start typing in the user ID field
     //Set delegates so the user can hit "next" to go to the next text field
@@ -33,7 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         userID.becomeFirstResponder()
         password.secureTextEntry = true
         self.userID.delegate = self
-        self.password.delegate = self;
+        self.password.delegate = self
     }
     
     //Check for memory warnings
@@ -48,7 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Check if the login was valid
-    //Make sure a username can't be spaces (Ex: "  ")
+    //Make sure a username can't be only spaces (Ex: "  ")
     func checkLogin(){
         if(userID.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && password.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""){
             status.text = "\(userID.text!) logged in"
@@ -61,12 +58,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Delegate function used to determine what should happen when "Next" is pressed
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField == userID){
+            userID.resignFirstResponder()
             password.becomeFirstResponder()
             return true
         }
         else{
             self.view.endEditing(true)
-            checkLogin()
             return false
         }
     }
