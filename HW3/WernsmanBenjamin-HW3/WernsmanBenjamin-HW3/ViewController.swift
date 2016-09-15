@@ -1,6 +1,8 @@
 //
 //  ViewController.swift
 //  WernsmanBenjamin-HW3
+//  EID:  bw47828
+//  Course:  CS378
 //
 //  Created by Ben Wernsman on 9/13/16.
 //  Copyright © 2016 utcs. All rights reserved.
