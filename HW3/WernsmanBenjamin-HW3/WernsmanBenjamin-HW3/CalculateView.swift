@@ -13,7 +13,7 @@ import UIKit
 
 class CalculateView: UIViewController {
     
-    // Use teamName to set label
+    // Used to store the name and type passed in via the segue
     var operatorName = String()
     var operatorType = String()
     
@@ -43,7 +43,6 @@ class CalculateView: UIViewController {
         
         opOne.keyboardType = UIKeyboardType.DecimalPad
         opTwo.keyboardType = UIKeyboardType.DecimalPad
-        
         opOne.becomeFirstResponder()
     }
     
@@ -54,6 +53,7 @@ class CalculateView: UIViewController {
     }
     
     //Make sure input is valid
+    //Return a double (amount) and then a bool (to determine if the parsing succeded)
     func checkInput(input:String) -> (Double,Bool){
         if let val = Double(input){
             return (val,true)
