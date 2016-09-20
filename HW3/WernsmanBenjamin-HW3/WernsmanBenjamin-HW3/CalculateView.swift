@@ -31,6 +31,7 @@ class CalculateView: UIViewController {
         let opTwoInput:(Double,Bool) = checkInput(opTwo.text!)
         
         if(opOneInput.1 && opTwoInput.1){
+            result.alpha = 1
             result.text! = String(calcInput(opOneInput.0,opTwoInput: opTwoInput.0))
         }
         
@@ -44,6 +45,8 @@ class CalculateView: UIViewController {
         opOne.keyboardType = UIKeyboardType.DecimalPad
         opTwo.keyboardType = UIKeyboardType.DecimalPad
         opOne.becomeFirstResponder()
+        
+        result.alpha = 0
     }
     
     //When the view appears, set the title and operator
