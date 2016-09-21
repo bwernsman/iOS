@@ -13,6 +13,10 @@
 		373EECBA1D91A76D008B7C9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373EECB81D91A76D008B7C9E /* LaunchScreen.storyboard */; };
 		373EECC21D91A7D4008B7C9E /* CandidateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EECC11D91A7D4008B7C9E /* CandidateManager.swift */; };
 		373EECC41D91A849008B7C9E /* AddCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EECC31D91A849008B7C9E /* AddCandidate.swift */; };
+		3748C0371D92CB360099E1F4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748C0361D92CB360099E1F4 /* Storage.swift */; };
+		3748C0391D92CFAF0099E1F4 /* ShowCandidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748C0381D92CFAF0099E1F4 /* ShowCandidates.swift */; };
+		3748C03B1D92DF030099E1F4 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748C03A1D92DF030099E1F4 /* Candidate.swift */; };
+		3748C03D1D92E03C0099E1F4 /* CandidateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3748C03C1D92E03C0099E1F4 /* CandidateDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		373EECBB1D91A76D008B7C9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373EECC11D91A7D4008B7C9E /* CandidateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateManager.swift; sourceTree = "<group>"; };
 		373EECC31D91A849008B7C9E /* AddCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCandidate.swift; sourceTree = "<group>"; };
+		3748C0361D92CB360099E1F4 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		3748C0381D92CFAF0099E1F4 /* ShowCandidates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCandidates.swift; sourceTree = "<group>"; };
+		3748C03A1D92DF030099E1F4 /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		3748C03C1D92E03C0099E1F4 /* CandidateDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,35 @@
 		373EECAE1D91A76D008B7C9E /* WernsmanBenjamin-HW4 */ = {
 			isa = PBXGroup;
 			children = (
+				3748C0351D92CB200099E1F4 /* View */,
+				3748C0341D92CB1A0099E1F4 /* Model */,
 				373EECAF1D91A76D008B7C9E /* AppDelegate.swift */,
-				373EECC11D91A7D4008B7C9E /* CandidateManager.swift */,
-				373EECC31D91A849008B7C9E /* AddCandidate.swift */,
-				373EECB31D91A76D008B7C9E /* Main.storyboard */,
 				373EECB61D91A76D008B7C9E /* Assets.xcassets */,
 				373EECB81D91A76D008B7C9E /* LaunchScreen.storyboard */,
 				373EECBB1D91A76D008B7C9E /* Info.plist */,
 			);
 			path = "WernsmanBenjamin-HW4";
+			sourceTree = "<group>";
+		};
+		3748C0341D92CB1A0099E1F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3748C0361D92CB360099E1F4 /* Storage.swift */,
+				3748C03A1D92DF030099E1F4 /* Candidate.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3748C0351D92CB200099E1F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				373EECB31D91A76D008B7C9E /* Main.storyboard */,
+				373EECC31D91A849008B7C9E /* AddCandidate.swift */,
+				373EECC11D91A7D4008B7C9E /* CandidateManager.swift */,
+				3748C0381D92CFAF0099E1F4 /* ShowCandidates.swift */,
+				3748C03C1D92E03C0099E1F4 /* CandidateDetail.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +167,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				373EECC21D91A7D4008B7C9E /* CandidateManager.swift in Sources */,
+				3748C03D1D92E03C0099E1F4 /* CandidateDetail.swift in Sources */,
+				3748C0371D92CB360099E1F4 /* Storage.swift in Sources */,
 				373EECC41D91A849008B7C9E /* AddCandidate.swift in Sources */,
+				3748C03B1D92DF030099E1F4 /* Candidate.swift in Sources */,
 				373EECB01D91A76D008B7C9E /* AppDelegate.swift in Sources */,
+				3748C0391D92CFAF0099E1F4 /* ShowCandidates.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +322,7 @@
 				373EECC01D91A76D008B7C9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

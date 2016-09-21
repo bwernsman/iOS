@@ -13,7 +13,12 @@ class AddCandidate: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.title = "Add Candidate"
+        
+        userStoage.candidates.append(Candidate(first_name: "Ben",last_name: "W"))
+        
+        print("added candidate")
     }
     
     override func didReceiveMemoryWarning() {
