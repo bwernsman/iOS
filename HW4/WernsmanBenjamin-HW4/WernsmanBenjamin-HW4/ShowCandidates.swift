@@ -29,8 +29,6 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
-        print("Updating table")
-        print(userStoage.candidates.count)
     }
     
     //Set the number of sections
@@ -40,9 +38,7 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //Set the number of rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(userStoage.candidates.count)
-        //return userStoage.candidates.count
-        return 1
+        return userStorage.candidates.count
     }
     
     //Set the info in the table view
@@ -50,12 +46,8 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath)
         
         let row = indexPath.row
-        //cell.textLabel?.text = userStoage.candidates[row].first_name + userStoage.candidates[row].last_name
-        
-        cell.textLabel?.text = "TESTTT"
-        
-        print("setting info")
-        //print(userStoage.candidates[row].first_name)
+        cell.textLabel?.text = userStorage.candidates[row].first_name + " " + userStorage.candidates[row].last_name
+        cell.detailTextLabel?.text = userStorage.candidates[row].party
         
         return cell
     }

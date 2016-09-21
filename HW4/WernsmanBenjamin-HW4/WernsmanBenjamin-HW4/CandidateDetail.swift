@@ -28,6 +28,14 @@ class CandidateDetail: UIViewController {
         print(indexTapped)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        first_name.text! = userStorage.candidates[indexTapped].first_name
+        last_name.text! = userStorage.candidates[indexTapped].last_name
+        state.text! = userStorage.candidates[indexTapped].state
+        party.text! = userStorage.candidates[indexTapped].party
+        votes.text! = String(userStorage.candidates[indexTapped].votes)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

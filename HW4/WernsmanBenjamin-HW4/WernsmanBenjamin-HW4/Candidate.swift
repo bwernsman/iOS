@@ -15,9 +15,12 @@ class Candidate {
     var party:String = ""
     var votes:Int = 0
     
-    init(first_name:String, last_name:String) {
+    init(first_name:String, last_name:String, state:String, party:String, votes:Int) {
         self.first_name = first_name
         self.last_name = last_name
+        self.state = state
+        self.party = party
+        self.votes = votes
     }
     
     func addVote() -> Int{
@@ -25,9 +28,5 @@ class Candidate {
         return self.votes
     }
     
-    static func createCandidate(first_name:String, last_name:String) -> Candidate{
-        return Candidate(first_name: first_name, last_name: last_name)
-    }
-
 }
 

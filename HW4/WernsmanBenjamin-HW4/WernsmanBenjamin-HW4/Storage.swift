@@ -12,4 +12,4 @@ class Storage {
     var candidates:[Candidate] = []
 }
 
-var userStoage = Storage()
+var userStorage = Storage()
