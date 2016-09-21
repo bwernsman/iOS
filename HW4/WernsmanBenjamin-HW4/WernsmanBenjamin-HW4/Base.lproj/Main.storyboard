@@ -37,10 +37,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PCh-kF-tJq">
                                 <rect key="frame" x="171" y="299" width="32" height="30"/>
                                 <state key="normal" title="Vote"/>
+                                <connections>
+                                    <action selector="voteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mbL-jw-xAQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3c-5C-G4b">
                                 <rect key="frame" x="147" y="363" width="81" height="30"/>
                                 <state key="normal" title="Show Votes"/>
+                                <connections>
+                                    <action selector="ShowVotesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ePu-OH-XQ1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -178,7 +184,7 @@
         <!--Show Candidates-->
         <scene sceneID="Y2Y-Ss-5ws">
             <objects>
-                <viewController id="uCn-7H-MeE" customClass="ShowCandidates" customModule="WernsmanBenjamin_HW4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowCandidates" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uCn-7H-MeE" customClass="ShowCandidates" customModule="WernsmanBenjamin_HW4" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zO8-UR-DT8"/>
                         <viewControllerLayoutGuide type="bottom" id="7Ss-O4-P5n"/>

@@ -11,9 +11,18 @@ import UIKit
 
 class CandidateManager: UIViewController {
     
+    var tableView = UITableView()
+    
+    @IBAction func voteButton(sender: AnyObject) {
+
+    }
+    
+    @IBAction func ShowVotesButton(sender: AnyObject) {
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         self.title = "Candidate Manager"
     }
@@ -23,10 +32,12 @@ class CandidateManager: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
     //Create a custom bar button so it says "Back"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let backButton = UIBarButtonItem()
         backButton.title = "Back"
         navigationItem.backBarButtonItem = backButton
     }
+
 }
