@@ -28,5 +28,14 @@ class Candidate {
         return self.votes
     }
     
+    //return votes
+    func getVotes() -> String{
+        return "Votes: " + String(self.votes)
+    }
+    
+    func getName() -> String {
+        return self.first_name + " " + self.last_name
+    }
+    
 }
 

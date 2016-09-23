@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3716F3421D94C0C70084A9A7 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3716F3411D94C0C70084A9A7 /* PopOver.swift */; };
 		373EECB01D91A76D008B7C9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373EECAF1D91A76D008B7C9E /* AppDelegate.swift */; };
 		373EECB51D91A76D008B7C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 373EECB31D91A76D008B7C9E /* Main.storyboard */; };
 		373EECB71D91A76D008B7C9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 373EECB61D91A76D008B7C9E /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3716F3411D94C0C70084A9A7 /* PopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		373EECAC1D91A76D008B7C9E /* WernsmanBenjamin-HW4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WernsmanBenjamin-HW4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		373EECAF1D91A76D008B7C9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		373EECB41D91A76D008B7C9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				373EECC11D91A7D4008B7C9E /* CandidateManager.swift */,
 				3748C0381D92CFAF0099E1F4 /* ShowCandidates.swift */,
 				3748C03C1D92E03C0099E1F4 /* CandidateDetail.swift */,
+				3716F3411D94C0C70084A9A7 /* PopOver.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				373EECC21D91A7D4008B7C9E /* CandidateManager.swift in Sources */,
 				3748C03D1D92E03C0099E1F4 /* CandidateDetail.swift in Sources */,
 				3748C0371D92CB360099E1F4 /* Storage.swift in Sources */,
+				3716F3421D94C0C70084A9A7 /* PopOver.swift in Sources */,
 				373EECC41D91A849008B7C9E /* AddCandidate.swift in Sources */,
 				3748C03B1D92DF030099E1F4 /* Candidate.swift in Sources */,
 				373EECB01D91A76D008B7C9E /* AppDelegate.swift in Sources */,

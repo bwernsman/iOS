@@ -19,10 +19,7 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         self.title = "Show Candidates"
-        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -44,24 +41,19 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
     //Set the info in the table view
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath)
-        
         let row = indexPath.row
-        cell.textLabel?.text = userStorage.candidates[row].first_name + " " + userStorage.candidates[row].last_name
+        cell.textLabel?.text = userStorage.candidates[row].getName()
         cell.detailTextLabel?.text = userStorage.candidates[row].party
-        
         return cell
     }
     
     //When a row is tapped, collect the info and store it so we can pass it to the next view
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
         indexTapped = indexPath.row
-        
         self.performSegueWithIdentifier(segueIdentifier, sender: self)
     }
     
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,14 +62,11 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //Create a custom bar button so it says "Back"
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if(segue.identifier == segueIdentifier){
             let destination = segue.destinationViewController as! CandidateDetail
-            
             let backButton = UIBarButtonItem()
             backButton.title = "Back"
             navigationItem.backBarButtonItem = backButton
-            
             destination.indexTapped = indexTapped
         }
     }

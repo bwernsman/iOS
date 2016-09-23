@@ -10,6 +10,7 @@ import Foundation
 
 class Storage {
     var candidates:[Candidate] = []
+    var fromView:String = ""
 }
 
 var userStorage = Storage()

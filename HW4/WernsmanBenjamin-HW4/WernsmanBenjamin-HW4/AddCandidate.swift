@@ -18,7 +18,6 @@ class AddCandidate: UIViewController {
     @IBOutlet weak var status: UILabel!
     
     @IBAction func saveButton(sender: AnyObject) {
-        
         if(first_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && last_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && state.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""){
             userStorage.candidates.append(Candidate(first_name: first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0))
             status.alpha = 1.0
@@ -26,7 +25,6 @@ class AddCandidate: UIViewController {
         }else{
             showError("Please enter valid input")
         }
-        
     }
     
     override func viewDidLoad() {
@@ -37,7 +35,6 @@ class AddCandidate: UIViewController {
     override func viewWillAppear(animated: Bool) {
         status.alpha = 0.0
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
