@@ -22,7 +22,14 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print("View will appear")
+        if(userStorage.candidates.count == 0){
+            tableView.alpha = 0
+            let NoCandidateLabel = UILabel(frame: CGRectMake(0, 0, 200, 21))
+            NoCandidateLabel.center = CGPointMake(self.preferredContentSize.width/2,self.preferredContentSize.height/2)
+            NoCandidateLabel.textAlignment = NSTextAlignment.Center
+            NoCandidateLabel.text = "No candidates"
+            self.view.addSubview(NoCandidateLabel)
+        }
     }
     
     
@@ -76,7 +83,7 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     }
     
     func ButtonPressed(){
-        self.dismissViewControllerAnimated(false, completion: nil)
+        //self.dismissViewControllerAnimated(false, completion: nil)
     }
 
 }

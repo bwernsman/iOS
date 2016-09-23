@@ -25,7 +25,7 @@ class CandidateDetail: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        first_name.textAlignment = NSTextAlignment.Left
+        //first_name.textAlignment = NSTextAlignment.Left
         first_name.text! = userStorage.candidates[indexTapped].first_name
         last_name.text! = userStorage.candidates[indexTapped].last_name
         state.text! = userStorage.candidates[indexTapped].state

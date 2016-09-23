@@ -15,6 +15,9 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
     let segueIdentifier = "ShowDetail"
     var indexTapped:Int = 0
     
+    var screenWidth:CGFloat = 0
+    var screenHeight:CGFloat = 0
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -22,10 +25,25 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
         self.title = "Show Candidates"
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        screenWidth = screenSize.width
+        screenHeight = screenSize.height
     }
     
     override func viewDidAppear(animated: Bool) {
         tableView.reloadData()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if(userStorage.candidates.count == 0){
+            tableView.alpha = 0
+            let NoCandidateLabel = UILabel(frame: CGRectMake(0, 0, 200, 21))
+            NoCandidateLabel.center = CGPointMake(screenWidth/2,screenHeight/2)
+            NoCandidateLabel.textAlignment = NSTextAlignment.Center
+            NoCandidateLabel.text = "No candidates"
+            self.view.addSubview(NoCandidateLabel)
+        }
     }
     
     //Set the number of sections
