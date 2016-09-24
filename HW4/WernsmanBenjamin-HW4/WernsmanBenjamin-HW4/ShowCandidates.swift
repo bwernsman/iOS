@@ -1,6 +1,8 @@
 //
 //  ShowCandidates.swift
 //  WernsmanBenjamin-HW4
+//  EID:  bw22494
+//  Course:  CS378
 //
 //  Created by Ben Wernsman on 9/21/16.
 //  Copyright © 2016 utcs. All rights reserved.
@@ -11,15 +13,22 @@ import UIKit
 
 class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //Text cell identifier used for the table view, and the segue identifier
     let textCellIdentifier = "TextCell"
     let segueIdentifier = "ShowDetail"
+    
+    //Stores the index tapped and passes it to the next view (via segue)
     var indexTapped:Int = 0
     
+    //Screen width and height of the view
     var screenWidth:CGFloat = 0
     var screenHeight:CGFloat = 0
     
+    //Table view linked from the story board
     @IBOutlet weak var tableView: UITableView!
     
+    //Sets the title, the delegate and the datasource for the table view
+    //Gets the screen width and view
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Show Candidates"
@@ -31,11 +40,11 @@ class ShowCandidates: UIViewController, UITableViewDataSource, UITableViewDelega
         screenHeight = screenSize.height
     }
     
-    override func viewDidAppear(animated: Bool) {
-        tableView.reloadData()
-    }
-    
+    //Every time the view is about to appear, reload the table to make sure the info is up to date
+    //If there are no candidates, show a label, if not show a table all the candidates
     override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+        
         if(userStorage.candidates.count == 0){
             tableView.alpha = 0
             let NoCandidateLabel = UILabel(frame: CGRectMake(0, 0, 200, 21))
