@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dRC-QL-pGe">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Candidate Manager-->
+        <scene sceneID="ldn-OJ-mBU">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="twr-MR-6Wz" customClass="CandidateManager" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7gX-ME-SAp"/>
+                        <viewControllerLayoutGuide type="bottom" id="M9b-AG-Bsq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PK6-o8-kKu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2h-Uj-B7a">
+                                <rect key="frame" x="136" y="156" width="102" height="30"/>
+                                <state key="normal" title="Add Candidate"/>
+                                <connections>
+                                    <action selector="addCandidateButton:" destination="twr-MR-6Wz" eventType="touchUpInside" id="pxB-Zj-q2t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fK-eu-fhV">
+                                <rect key="frame" x="127" y="227" width="120" height="30"/>
+                                <state key="normal" title="Show Candidates"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Iq-OA-bh5">
+                                <rect key="frame" x="171" y="299" width="32" height="30"/>
+                                <state key="normal" title="Vote"/>
+                                <connections>
+                                    <action selector="voteButton:" destination="twr-MR-6Wz" eventType="touchUpInside" id="eXa-hM-r43"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLK-RL-eA2">
+                                <rect key="frame" x="147" y="363" width="81" height="30"/>
+                                <state key="normal" title="Show Votes"/>
+                                <connections>
+                                    <action selector="ShowVotesButton:" destination="twr-MR-6Wz" eventType="touchUpInside" id="FP4-oO-vhN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tLK-RL-eA2" firstAttribute="top" secondItem="0Iq-OA-bh5" secondAttribute="bottom" constant="34" id="0ip-7k-4Bw"/>
+                            <constraint firstItem="u2h-Uj-B7a" firstAttribute="centerX" secondItem="3fK-eu-fhV" secondAttribute="centerX" id="0nV-g4-5RZ"/>
+                            <constraint firstItem="u2h-Uj-B7a" firstAttribute="centerX" secondItem="PK6-o8-kKu" secondAttribute="centerX" id="Ze5-DC-rmh"/>
+                            <constraint firstItem="0Iq-OA-bh5" firstAttribute="centerX" secondItem="tLK-RL-eA2" secondAttribute="centerX" id="bdH-HB-RPW"/>
+                            <constraint firstItem="u2h-Uj-B7a" firstAttribute="top" secondItem="7gX-ME-SAp" secondAttribute="bottom" constant="92" id="ffo-dw-XjB"/>
+                            <constraint firstItem="3fK-eu-fhV" firstAttribute="top" secondItem="u2h-Uj-B7a" secondAttribute="bottom" constant="41" id="pqM-BH-MlO"/>
+                            <constraint firstItem="3fK-eu-fhV" firstAttribute="centerX" secondItem="0Iq-OA-bh5" secondAttribute="centerX" id="y1V-4E-0Jb"/>
+                            <constraint firstItem="0Iq-OA-bh5" firstAttribute="top" secondItem="3fK-eu-fhV" secondAttribute="bottom" constant="42" id="y2T-UA-ySZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ylk-Rm-Cxe"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="CjI-CP-gjS" kind="show" identifier="AddCandidate" id="Rjc-cL-cFs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cA-Zs-nGU" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775.5" y="450.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KKL-75-4Gb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dRC-QL-pGe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ye-qL-8Sc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="twr-MR-6Wz" kind="relationship" relationship="rootViewController" id="ZNy-Ma-UML"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fx-ew-rZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1124.5" y="450.5"/>
+        </scene>
+        <!--Add Candidate-->
+        <scene sceneID="tnR-bY-e6o">
+            <objects>
+                <viewController id="CjI-CP-gjS" customClass="AddCandidate" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WwY-ZE-5lz"/>
+                        <viewControllerLayoutGuide type="bottom" id="tu2-E9-yXj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gaz-da-hYd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INb-GQ-DJe">
+                                <rect key="frame" x="48" y="154" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdo-nR-r2r">
+                                <rect key="frame" x="49" y="194" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDO-vF-8VP">
+                                <rect key="frame" x="91" y="233" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Political Party:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gK-Vc-BJc">
+                                <rect key="frame" x="27" y="271" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-J4-6Pl">
+                                <rect key="frame" x="150" y="268" width="163" height="29"/>
+                                <segments>
+                                    <segment title="Democrat"/>
+                                    <segment title="Republican"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bwi-df-g8P">
+                                <rect key="frame" x="150" y="229" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="mm9-Py-4v1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iq6-LP-dzo">
+                                <rect key="frame" x="150" y="191" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xat-JQ-YOD">
+                                <rect key="frame" x="150" y="150" width="163" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xj3-Mv-n9o">
+                                <rect key="frame" x="181" y="383" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="CjI-CP-gjS" eventType="touchUpInside" id="iwX-qC-t7f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNr-LF-vHw">
+                                <rect key="frame" x="177" y="459" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="INb-GQ-DJe" firstAttribute="trailing" secondItem="bdo-nR-r2r" secondAttribute="trailing" id="3bq-Po-U9B"/>
+                            <constraint firstItem="bdo-nR-r2r" firstAttribute="baseline" secondItem="iq6-LP-dzo" secondAttribute="baseline" id="4Sr-hb-kIc"/>
+                            <constraint firstItem="INb-GQ-DJe" firstAttribute="centerY" secondItem="Xat-JQ-YOD" secondAttribute="centerY" id="5AD-Uy-nvV"/>
+                            <constraint firstItem="mNr-LF-vHw" firstAttribute="top" secondItem="xj3-Mv-n9o" secondAttribute="bottom" constant="46" id="7mD-hD-xNk"/>
+                            <constraint firstItem="iq6-LP-dzo" firstAttribute="trailing" secondItem="Xjp-J4-6Pl" secondAttribute="trailing" id="8Tv-iY-8VZ"/>
+                            <constraint firstItem="iq6-LP-dzo" firstAttribute="leading" secondItem="Bwi-df-g8P" secondAttribute="leading" id="AU0-0g-7EX"/>
+                            <constraint firstItem="xj3-Mv-n9o" firstAttribute="top" secondItem="Xjp-J4-6Pl" secondAttribute="bottom" constant="87" id="Iqp-kt-qTR"/>
+                            <constraint firstItem="Xat-JQ-YOD" firstAttribute="leading" secondItem="iq6-LP-dzo" secondAttribute="leading" id="JeS-He-q1C"/>
+                            <constraint firstItem="FDO-vF-8VP" firstAttribute="centerY" secondItem="Bwi-df-g8P" secondAttribute="centerY" id="Jf5-3i-JRK"/>
+                            <constraint firstItem="Xjp-J4-6Pl" firstAttribute="top" secondItem="Bwi-df-g8P" secondAttribute="bottom" constant="9" id="MHL-5d-SYC"/>
+                            <constraint firstItem="xj3-Mv-n9o" firstAttribute="centerX" secondItem="Bwi-df-g8P" secondAttribute="centerX" id="NC9-L7-YT4"/>
+                            <constraint firstItem="Bwi-df-g8P" firstAttribute="leading" secondItem="Xjp-J4-6Pl" secondAttribute="leading" id="OgO-jp-dUY"/>
+                            <constraint firstItem="Xat-JQ-YOD" firstAttribute="top" secondItem="WwY-ZE-5lz" secondAttribute="bottom" constant="86" id="WYT-ly-D1x"/>
+                            <constraint firstItem="3gK-Vc-BJc" firstAttribute="leading" secondItem="gaz-da-hYd" secondAttribute="leadingMargin" constant="11" id="a0Q-sF-UCa"/>
+                            <constraint firstItem="Xat-JQ-YOD" firstAttribute="trailing" secondItem="iq6-LP-dzo" secondAttribute="trailing" id="gxH-uc-ZNC"/>
+                            <constraint firstItem="Xat-JQ-YOD" firstAttribute="leading" secondItem="INb-GQ-DJe" secondAttribute="trailing" constant="14" id="hsU-tM-JRA"/>
+                            <constraint firstItem="xj3-Mv-n9o" firstAttribute="centerX" secondItem="mNr-LF-vHw" secondAttribute="centerX" id="jkJ-dj-OOs"/>
+                            <constraint firstItem="iq6-LP-dzo" firstAttribute="top" secondItem="Xat-JQ-YOD" secondAttribute="bottom" constant="11" id="n4o-9R-1e6"/>
+                            <constraint firstItem="Bwi-df-g8P" firstAttribute="top" secondItem="iq6-LP-dzo" secondAttribute="bottom" constant="8" symbolic="YES" id="nqk-hG-dXp"/>
+                            <constraint firstItem="bdo-nR-r2r" firstAttribute="trailing" secondItem="FDO-vF-8VP" secondAttribute="trailing" id="sc2-td-wtw"/>
+                            <constraint firstItem="Xjp-J4-6Pl" firstAttribute="baseline" secondItem="3gK-Vc-BJc" secondAttribute="firstBaseline" id="wcK-st-0wP"/>
+                            <constraint firstItem="FDO-vF-8VP" firstAttribute="trailing" secondItem="3gK-Vc-BJc" secondAttribute="trailing" id="zHi-C0-O8z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Sk7-mx-ns9"/>
+                    <connections>
+                        <outlet property="first_name" destination="Xat-JQ-YOD" id="uhI-qM-ycP"/>
+                        <outlet property="last_name" destination="iq6-LP-dzo" id="2BP-IS-hGl"/>
+                        <outlet property="party" destination="Xjp-J4-6Pl" id="qGB-fg-efZ"/>
+                        <outlet property="state" destination="Bwi-df-g8P" id="EFq-SQ-hvI"/>
+                        <outlet property="status" destination="mNr-LF-vHw" id="HWC-zF-Beu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B63-gW-Yiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2580.5" y="33.5"/>
+        </scene>
+    </scenes>
+</document>
