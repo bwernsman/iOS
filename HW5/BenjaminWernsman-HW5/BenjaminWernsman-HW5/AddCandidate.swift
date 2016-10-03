@@ -49,8 +49,9 @@ class AddCandidate: UIViewController, DataModelProtocol {
         
         let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
         controller.delegate = self
-        controller.delegate?.notify("aaaaa")
         
+        //Calls Notify
+        //controller.delegate?.notify("aaaaa")
         
     }
     
@@ -64,7 +65,6 @@ class AddCandidate: UIViewController, DataModelProtocol {
     }
     
     func notify(message:String){
-        print("Function called")
         print(message)
         
         let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)

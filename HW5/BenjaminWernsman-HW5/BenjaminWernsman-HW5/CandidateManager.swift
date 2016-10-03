@@ -42,15 +42,12 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
         super.viewDidLoad()
         self.title = "Candidate Manager"
 
-        //CandidateManager.delegate
-        
-        //CandidateManager.delegate = AddCandidate()
+        deviceStorage.demoCoreData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
     
     //Helper function that creates a popover

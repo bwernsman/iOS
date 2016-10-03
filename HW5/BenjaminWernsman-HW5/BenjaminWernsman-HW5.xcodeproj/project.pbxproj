@@ -8,19 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		374AA2911D9ED90F005D3A58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374AA2901D9ED90F005D3A58 /* AppDelegate.swift */; };
-		374AA2931D9ED90F005D3A58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374AA2921D9ED90F005D3A58 /* ViewController.swift */; };
 		374AA2961D9ED90F005D3A58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374AA2941D9ED90F005D3A58 /* Main.storyboard */; };
 		374AA2991D9ED90F005D3A58 /* BenjaminWernsman_HW5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 374AA2971D9ED90F005D3A58 /* BenjaminWernsman_HW5.xcdatamodeld */; };
 		374AA29B1D9ED90F005D3A58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374AA29A1D9ED90F005D3A58 /* Assets.xcassets */; };
 		374AA29E1D9ED90F005D3A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374AA29C1D9ED90F005D3A58 /* LaunchScreen.storyboard */; };
 		374AA2A61D9ED97D005D3A58 /* CandidateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374AA2A51D9ED97D005D3A58 /* CandidateManager.swift */; };
 		374AA2A81D9EDA67005D3A58 /* AddCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374AA2A71D9EDA67005D3A58 /* AddCandidate.swift */; };
+		37F6DFBC1DA1ED7A00AC1F40 /* DeviceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6DFBB1DA1ED7A00AC1F40 /* DeviceStorage.swift */; };
+		37F6DFC01DA1F01800AC1F40 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6DFBF1DA1F01800AC1F40 /* Candidate.swift */; };
+		37F6DFC21DA1F02400AC1F40 /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6DFC11DA1F02400AC1F40 /* PopOver.swift */; };
+		37F6DFC41DA1F02B00AC1F40 /* ShowCandidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6DFC31DA1F02B00AC1F40 /* ShowCandidates.swift */; };
+		37F6DFC61DA1F49F00AC1F40 /* Candidates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6DFC51DA1F49F00AC1F40 /* Candidates.swift */; };
+		37F6DFC81DA1F5C200AC1F40 /* CandidateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F6DFC71DA1F5C200AC1F40 /* CandidateDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		374AA28D1D9ED90F005D3A58 /* BenjaminWernsman-HW5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BenjaminWernsman-HW5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		374AA2901D9ED90F005D3A58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		374AA2921D9ED90F005D3A58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		374AA2951D9ED90F005D3A58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		374AA2981D9ED90F005D3A58 /* BenjaminWernsman_HW5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BenjaminWernsman_HW5.xcdatamodel; sourceTree = "<group>"; };
 		374AA29A1D9ED90F005D3A58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +32,12 @@
 		374AA29F1D9ED90F005D3A58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		374AA2A51D9ED97D005D3A58 /* CandidateManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateManager.swift; sourceTree = "<group>"; };
 		374AA2A71D9EDA67005D3A58 /* AddCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCandidate.swift; sourceTree = "<group>"; };
+		37F6DFBB1DA1ED7A00AC1F40 /* DeviceStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceStorage.swift; sourceTree = "<group>"; };
+		37F6DFBF1DA1F01800AC1F40 /* Candidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		37F6DFC11DA1F02400AC1F40 /* PopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
+		37F6DFC31DA1F02B00AC1F40 /* ShowCandidates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowCandidates.swift; sourceTree = "<group>"; };
+		37F6DFC51DA1F49F00AC1F40 /* Candidates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candidates.swift; sourceTree = "<group>"; };
+		37F6DFC71DA1F5C200AC1F40 /* CandidateDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandidateDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +70,38 @@
 		374AA28F1D9ED90F005D3A58 /* BenjaminWernsman-HW5 */ = {
 			isa = PBXGroup;
 			children = (
-				374AA2A51D9ED97D005D3A58 /* CandidateManager.swift */,
-				374AA2A71D9EDA67005D3A58 /* AddCandidate.swift */,
+				37F6DFBE1DA1EFDA00AC1F40 /* View */,
+				37F6DFBD1DA1EFD300AC1F40 /* Model */,
 				374AA2901D9ED90F005D3A58 /* AppDelegate.swift */,
-				374AA2921D9ED90F005D3A58 /* ViewController.swift */,
-				374AA2941D9ED90F005D3A58 /* Main.storyboard */,
 				374AA29A1D9ED90F005D3A58 /* Assets.xcassets */,
 				374AA29C1D9ED90F005D3A58 /* LaunchScreen.storyboard */,
 				374AA29F1D9ED90F005D3A58 /* Info.plist */,
 				374AA2971D9ED90F005D3A58 /* BenjaminWernsman_HW5.xcdatamodeld */,
 			);
 			path = "BenjaminWernsman-HW5";
+			sourceTree = "<group>";
+		};
+		37F6DFBD1DA1EFD300AC1F40 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37F6DFBF1DA1F01800AC1F40 /* Candidate.swift */,
+				37F6DFBB1DA1ED7A00AC1F40 /* DeviceStorage.swift */,
+				37F6DFC51DA1F49F00AC1F40 /* Candidates.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		37F6DFBE1DA1EFDA00AC1F40 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				374AA2941D9ED90F005D3A58 /* Main.storyboard */,
+				374AA2A51D9ED97D005D3A58 /* CandidateManager.swift */,
+				374AA2A71D9EDA67005D3A58 /* AddCandidate.swift */,
+				37F6DFC11DA1F02400AC1F40 /* PopOver.swift */,
+				37F6DFC31DA1F02B00AC1F40 /* ShowCandidates.swift */,
+				37F6DFC71DA1F5C200AC1F40 /* CandidateDetail.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +175,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F6DFC41DA1F02B00AC1F40 /* ShowCandidates.swift in Sources */,
+				37F6DFC21DA1F02400AC1F40 /* PopOver.swift in Sources */,
 				374AA2A81D9EDA67005D3A58 /* AddCandidate.swift in Sources */,
-				374AA2931D9ED90F005D3A58 /* ViewController.swift in Sources */,
+				37F6DFC61DA1F49F00AC1F40 /* Candidates.swift in Sources */,
+				37F6DFC81DA1F5C200AC1F40 /* CandidateDetail.swift in Sources */,
 				374AA2A61D9ED97D005D3A58 /* CandidateManager.swift in Sources */,
+				37F6DFBC1DA1ED7A00AC1F40 /* DeviceStorage.swift in Sources */,
+				37F6DFC01DA1F01800AC1F40 /* Candidate.swift in Sources */,
 				374AA2991D9ED90F005D3A58 /* BenjaminWernsman_HW5.xcdatamodeld in Sources */,
 				374AA2911D9ED90F005D3A58 /* AppDelegate.swift in Sources */,
 			);
