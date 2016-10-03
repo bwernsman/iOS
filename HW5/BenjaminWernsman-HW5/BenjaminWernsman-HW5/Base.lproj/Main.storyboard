@@ -11,7 +11,7 @@
         <!--Candidate Manager-->
         <scene sceneID="ldn-OJ-mBU">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="twr-MR-6Wz" customClass="CandidateManager" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CandidateManager" useStoryboardIdentifierAsRestorationIdentifier="YES" id="twr-MR-6Wz" customClass="CandidateManager" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7gX-ME-SAp"/>
                         <viewControllerLayoutGuide type="bottom" id="M9b-AG-Bsq"/>

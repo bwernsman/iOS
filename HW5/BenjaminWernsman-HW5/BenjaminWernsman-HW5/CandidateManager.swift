@@ -11,9 +11,17 @@
 import Foundation
 import UIKit
 
-class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegate, DataModelProtocol {
+//Data model protocol
+protocol DataModelProtocol: NSObjectProtocol {
+    func notify(message:String)
+}
+
+class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegate {
+    
+    var delegate: DataModelProtocol?
     
     @IBAction func addCandidateButton(sender: AnyObject) {
+        delegate?.notify("passed in")
         self.performSegueWithIdentifier("AddCandidate", sender: self)
     }
     
@@ -33,16 +41,16 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Candidate Manager"
+
+        //CandidateManager.delegate
+        
+        //CandidateManager.delegate = AddCandidate()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    func notify(message:String){
-        print(message)
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+
     
     
     //Helper function that creates a popover
@@ -66,18 +74,6 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
         let backButton = UIBarButtonItem()
         backButton.title = "Back"
         navigationItem.backBarButtonItem = backButton
-        
-        if segue.identifier == "AddCandidate" {
-            //let navigationController = segue.destinationViewController as? UINavigationController
-            //let addItemViewController = navigationController?.topViewController as? AddCandidate
-            
-            let destination = segue.destinationViewController as! AddCandidate
-            destination.delegate = self
-            
-            //if let viewController = addItemViewController {
-            //    viewController.delegate = self
-            //}
-        }
     }
 
 }

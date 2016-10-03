@@ -11,12 +11,9 @@
 import Foundation
 import UIKit
 
-//Data model protocol
-protocol DataModelProtocol:class {
-    func notify(message:String)
-}
-
-class AddCandidate: UIViewController {
+class AddCandidate: UIViewController, DataModelProtocol {
+    
+    //var delegate: DataModelProtocol? = nil
     
     //Outlets for all the user inputs needed to create a candidate
     @IBOutlet weak var first_name: UITextField!
@@ -24,8 +21,6 @@ class AddCandidate: UIViewController {
     @IBOutlet weak var state: UITextField!
     @IBOutlet weak var party: UISegmentedControl!
     @IBOutlet weak var status: UILabel!
-    
-    var delegate: DataModelProtocol?
     
     //When the user taps the save button, check to make sure the input is valid 
     //Use trimming to make sure the user does not enter a name with only spaces Ex: " " is not a name
@@ -37,21 +32,26 @@ class AddCandidate: UIViewController {
             //Change to send info back
             //userStorage.candidates.append(Candidate(first_name: first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0))
             
-            if let delegate = self.delegate {
-                delegate.notify("Heyyyyyy")
-            }
             
             status.alpha = 1.0
             status.text = "Candidate saved"
         }else{
-            showError("Please enter valid input")
+            showAlert("ERROR",message: "Please enter valid input")
         }
     }
+    
+    
     
     //Set the title when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add Candidate"
+        
+        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
+        controller.delegate = self
+        controller.delegate?.notify("aaaaa")
+        
+        
     }
     
     //When the view is about to appear, make the status invisable until the a candidate is created
@@ -63,9 +63,20 @@ class AddCandidate: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func notify(message:String){
+        print("Function called")
+        print(message)
+        
+        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        
+        dispatch_async(backgroundQueue){
+            self.showAlert("Alert",message: message)
+        }
+    }
+    
     //If the user gives an invalid input, alert them
-    func showError(errorMessage:String){
-        let alertController = UIAlertController(title: "ERROR", message: errorMessage, preferredStyle: UIAlertControllerStyle.Alert)
+    func showAlert(title:String, message:String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
