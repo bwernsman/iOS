@@ -73,6 +73,7 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         if(candidateManager.fromView == "vote"){
             if(candidateManager.candidates[indexPath.row].votes < 1){
                 candidateManager.candidates[indexPath.row].addVote()
+                deviceStorage.addVote(candidateManager.candidates[indexPath.row])
                 showAlert("Vote Casted", message: "You voted for " + candidateManager.candidates[indexPath.row].getName())
             }
             else{

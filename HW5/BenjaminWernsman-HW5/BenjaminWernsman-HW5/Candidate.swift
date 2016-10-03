@@ -14,10 +14,10 @@ class Candidate {
     var last_name:String = ""
     var state:String = ""
     var party:String = ""
-    var votes:Int = 0
+    var votes:Int64 = 0
     
     //Initialize the class
-    init(first_name:String, last_name:String, state:String, party:String, votes:Int) {
+    init(first_name:String, last_name:String, state:String, party:String, votes:Int64) {
         self.first_name = first_name
         self.last_name = last_name
         self.state = state
@@ -26,7 +26,7 @@ class Candidate {
     }
     
     //Add a vote
-    func addVote() -> Int{
+    func addVote() -> Int64{
         self.votes += 1
         return self.votes
     }

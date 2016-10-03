@@ -341,8 +341,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Poloitical Party:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW6-OW-MOi">
-                                <rect key="frame" x="50" y="328" width="119" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Political Party:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gW6-OW-MOi">
+                                <rect key="frame" x="60" y="328" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -386,26 +386,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gW6-OW-MOi" firstAttribute="leading" secondItem="Pb8-FS-SzW" secondAttribute="leadingMargin" constant="34" id="3Em-2o-xZu"/>
-                            <constraint firstItem="gW6-OW-MOi" firstAttribute="top" secondItem="eT8-tk-4TX" secondAttribute="bottom" constant="36" id="4B1-qe-JXp"/>
-                            <constraint firstItem="sB9-0A-gWT" firstAttribute="top" secondItem="SYt-I1-Nao" secondAttribute="bottom" constant="83" id="6Yc-Bm-4XI"/>
-                            <constraint firstItem="pcS-v5-ATb" firstAttribute="leading" secondItem="L1o-14-hg5" secondAttribute="leading" id="6nH-4G-OQb"/>
-                            <constraint firstItem="7sG-Xy-3QM" firstAttribute="top" secondItem="gW6-OW-MOi" secondAttribute="bottom" constant="33" id="8TN-QG-Evt"/>
-                            <constraint firstItem="7bg-VK-1wy" firstAttribute="top" secondItem="sB9-0A-gWT" secondAttribute="bottom" constant="42" id="8nR-0c-thv"/>
-                            <constraint firstItem="7bg-VK-1wy" firstAttribute="baseline" secondItem="Zhh-hd-Yzp" secondAttribute="baseline" id="APa-Cp-ook"/>
-                            <constraint firstItem="sB9-0A-gWT" firstAttribute="baseline" secondItem="DoW-pL-xPf" secondAttribute="baseline" id="CVj-Js-3wY"/>
-                            <constraint firstItem="7bg-VK-1wy" firstAttribute="trailing" secondItem="7sG-Xy-3QM" secondAttribute="trailing" id="HVE-0y-oA1"/>
-                            <constraint firstItem="DoW-pL-xPf" firstAttribute="leading" secondItem="sB9-0A-gWT" secondAttribute="trailing" constant="56" id="JAF-bp-fgD"/>
-                            <constraint firstItem="eT8-tk-4TX" firstAttribute="baseline" secondItem="pcS-v5-ATb" secondAttribute="baseline" id="QMZ-qQ-7Io"/>
-                            <constraint firstItem="gW6-OW-MOi" firstAttribute="baseline" secondItem="L1o-14-hg5" secondAttribute="baseline" id="RLQ-g8-MVo"/>
-                            <constraint firstItem="sB9-0A-gWT" firstAttribute="leading" secondItem="7bg-VK-1wy" secondAttribute="leading" id="UQA-s4-51L"/>
-                            <constraint firstItem="L1o-14-hg5" firstAttribute="leading" secondItem="FyC-64-UQw" secondAttribute="leading" id="Uep-a4-y8r"/>
-                            <constraint firstItem="sB9-0A-gWT" firstAttribute="trailing" secondItem="eT8-tk-4TX" secondAttribute="trailing" id="VIa-nI-Uog"/>
-                            <constraint firstItem="eT8-tk-4TX" firstAttribute="top" secondItem="7bg-VK-1wy" secondAttribute="bottom" constant="40" id="awM-Gg-3Ht"/>
-                            <constraint firstItem="eT8-tk-4TX" firstAttribute="trailing" secondItem="gW6-OW-MOi" secondAttribute="trailing" id="d9e-yi-Nm5"/>
-                            <constraint firstItem="7sG-Xy-3QM" firstAttribute="baseline" secondItem="FyC-64-UQw" secondAttribute="baseline" id="hTU-yi-F54"/>
-                            <constraint firstItem="Zhh-hd-Yzp" firstAttribute="leading" secondItem="pcS-v5-ATb" secondAttribute="leading" id="lzw-5W-vzm"/>
-                            <constraint firstItem="DoW-pL-xPf" firstAttribute="leading" secondItem="Zhh-hd-Yzp" secondAttribute="leading" id="ttl-jq-16c"/>
+                            <constraint firstItem="sB9-0A-gWT" firstAttribute="baseline" secondItem="DoW-pL-xPf" secondAttribute="baseline" id="4sz-M3-UJ0"/>
+                            <constraint firstItem="DoW-pL-xPf" firstAttribute="leading" secondItem="sB9-0A-gWT" secondAttribute="trailing" constant="56" id="8Nn-gu-W0X"/>
+                            <constraint firstItem="gW6-OW-MOi" firstAttribute="leading" secondItem="Pb8-FS-SzW" secondAttribute="leadingMargin" constant="44" id="BRq-nv-bbq"/>
+                            <constraint firstItem="DoW-pL-xPf" firstAttribute="leading" secondItem="Zhh-hd-Yzp" secondAttribute="leading" id="M4C-J6-CKz"/>
+                            <constraint firstItem="Zhh-hd-Yzp" firstAttribute="leading" secondItem="pcS-v5-ATb" secondAttribute="leading" id="QiM-X4-r7U"/>
+                            <constraint firstItem="7sG-Xy-3QM" firstAttribute="top" secondItem="gW6-OW-MOi" secondAttribute="bottom" constant="33" id="TCj-Fm-meh"/>
+                            <constraint firstItem="eT8-tk-4TX" firstAttribute="top" secondItem="7bg-VK-1wy" secondAttribute="bottom" constant="40" id="Z2g-J4-wvw"/>
+                            <constraint firstItem="sB9-0A-gWT" firstAttribute="leading" secondItem="7bg-VK-1wy" secondAttribute="leading" id="ZhN-Fk-wrs"/>
+                            <constraint firstItem="7bg-VK-1wy" firstAttribute="baseline" secondItem="Zhh-hd-Yzp" secondAttribute="baseline" id="cRw-7A-JNf"/>
+                            <constraint firstItem="7bg-VK-1wy" firstAttribute="trailing" secondItem="7sG-Xy-3QM" secondAttribute="trailing" id="cxd-pc-Fd8"/>
+                            <constraint firstItem="sB9-0A-gWT" firstAttribute="top" secondItem="SYt-I1-Nao" secondAttribute="bottom" constant="83" id="g2M-9O-aZv"/>
+                            <constraint firstItem="gW6-OW-MOi" firstAttribute="top" secondItem="eT8-tk-4TX" secondAttribute="bottom" constant="36" id="gvN-5L-4W6"/>
+                            <constraint firstItem="pcS-v5-ATb" firstAttribute="leading" secondItem="L1o-14-hg5" secondAttribute="leading" id="jOc-YO-iKn"/>
+                            <constraint firstItem="gW6-OW-MOi" firstAttribute="baseline" secondItem="L1o-14-hg5" secondAttribute="baseline" id="kfk-q5-cWM"/>
+                            <constraint firstItem="L1o-14-hg5" firstAttribute="leading" secondItem="FyC-64-UQw" secondAttribute="leading" id="lVE-iG-mGc"/>
+                            <constraint firstItem="eT8-tk-4TX" firstAttribute="trailing" secondItem="gW6-OW-MOi" secondAttribute="trailing" id="oTd-do-6lg"/>
+                            <constraint firstItem="7bg-VK-1wy" firstAttribute="top" secondItem="sB9-0A-gWT" secondAttribute="bottom" constant="42" id="oyu-kf-MLs"/>
+                            <constraint firstItem="7sG-Xy-3QM" firstAttribute="baseline" secondItem="FyC-64-UQw" secondAttribute="baseline" id="slH-n9-gvf"/>
+                            <constraint firstItem="sB9-0A-gWT" firstAttribute="trailing" secondItem="eT8-tk-4TX" secondAttribute="trailing" id="ugD-Ak-hdb"/>
+                            <constraint firstItem="eT8-tk-4TX" firstAttribute="baseline" secondItem="pcS-v5-ATb" secondAttribute="baseline" id="vOj-8q-1Ez"/>
                         </constraints>
                     </view>
                     <connections>

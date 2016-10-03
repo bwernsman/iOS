@@ -27,32 +27,32 @@ class AddCandidate: UIViewController, DataModelProtocol {
     //If successfull, add the candidate to the model
     //If error, alert the user there is a problem
     @IBAction func saveButton(sender: AnyObject) {
+        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
+        controller.delegate = self
+        
         if(first_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && last_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && state.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""){
             
-            //Change to send info back
-            //userStorage.candidates.append(Candidate(first_name: first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0))
+            deviceStorage.updateModel(first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0, callback: { (success) in
+                if(success){
+                    self.status.alpha = 1.0
+                    self.status.text = "Candidate saved"
+                    controller.delegate?.notify("Data has been saved")
+                    
+                }
+                else{
+                    controller.delegate?.notify("Error storing data to persistent storage")
+                }
+            })
             
-            
-            status.alpha = 1.0
-            status.text = "Candidate saved"
         }else{
-            showAlert("ERROR",message: "Please enter valid input")
+            controller.delegate?.notify("Please enter valid input")
         }
     }
-    
-    
     
     //Set the title when the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add Candidate"
-        
-        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
-        controller.delegate = self
-        
-        //Calls Notify
-        //controller.delegate?.notify("aaaaa")
-        
     }
     
     //When the view is about to appear, make the status invisable until the a candidate is created
@@ -65,11 +65,7 @@ class AddCandidate: UIViewController, DataModelProtocol {
     }
     
     func notify(message:String){
-        print(message)
-        
-        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-        
-        dispatch_async(backgroundQueue){
+        dispatch_async(dispatch_get_main_queue()){
             self.showAlert("Alert",message: message)
         }
     }

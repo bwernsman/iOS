@@ -27,28 +27,27 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
     
     //Button that shows a popup when a user wants to vote
     @IBAction func voteButton(sender: AnyObject) {
-        //userStorage.fromView = "vote"
+        candidateManager.fromView = "vote"
         presentPopOver(sender)
     }
     
     //Button that shows a popup of the candidated and amout of votes
     @IBAction func ShowVotesButton(sender: AnyObject) {
-        //userStorage.fromView = "showvote"
+        candidateManager.fromView = "showvote"
         presentPopOver(sender)
     }
     
-    //Set the title when the view loads
+    //Set the title when the view loads, and load all the candidates from persistant disk
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Candidate Manager"
 
-        deviceStorage.demoCoreData()
+        deviceStorage.loadModel()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     //Helper function that creates a popover
     func presentPopOver(sender: AnyObject){
