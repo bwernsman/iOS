@@ -13,8 +13,6 @@ import UIKit
 
 class AddCandidate: UIViewController, DataModelProtocol {
     
-    //var delegate: DataModelProtocol? = nil
-    
     //Outlets for all the user inputs needed to create a candidate
     @IBOutlet weak var first_name: UITextField!
     @IBOutlet weak var last_name: UITextField!
@@ -37,7 +35,6 @@ class AddCandidate: UIViewController, DataModelProtocol {
                     self.status.alpha = 1.0
                     self.status.text = "Candidate saved"
                     controller.delegate?.notify("Data has been saved")
-                    
                 }
                 else{
                     controller.delegate?.notify("Error storing data to persistent storage")
@@ -64,6 +61,7 @@ class AddCandidate: UIViewController, DataModelProtocol {
         super.didReceiveMemoryWarning()
     }
     
+    //Dispatch an alert with the given message
     func notify(message:String){
         dispatch_async(dispatch_get_main_queue()){
             self.showAlert("Alert",message: message)

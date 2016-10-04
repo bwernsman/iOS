@@ -73,9 +73,9 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         if(candidateManager.fromView == "vote"){
             if(candidateManager.candidates[indexPath.row].votes < 1){
                 candidateManager.candidates[indexPath.row].addVote()
-                NSNotificationCenter.defaultCenter().postNotificationName("addVoteNotification", object: nil)
-                deviceStorage.addVote(candidateManager.candidates[indexPath.row],id: Int64(indexPath.row))
-                showAlert("Vote Casted", message: "You voted for " + candidateManager.candidates[indexPath.row].getName())
+                let id = indexPath.row
+                NSNotificationCenter.defaultCenter().postNotificationName("addVoteNotification", object: id)
+                //showAlert("Vote Casted", message: "You voted for " + candidateManager.candidates[indexPath.row].getName())
             }
             else{
                 showAlert("ERROR", message: "You can only vote for a candidate once!")

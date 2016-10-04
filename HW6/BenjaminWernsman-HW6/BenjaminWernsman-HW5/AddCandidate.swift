@@ -38,8 +38,6 @@ class AddCandidate: UIViewController, DataModelProtocol {
                 if(success){
                     self.status.alpha = 1.0
                     self.status.text = "Candidate saved"
-                    controller.delegate?.notify("Data has been saved")
-                    
                 }
                 else{
                     controller.delegate?.notify("Error storing data to persistent storage")
@@ -55,6 +53,16 @@ class AddCandidate: UIViewController, DataModelProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add Candidate"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AddCandidate.notifyUser(_:)),name:"notifyNotification", object: nil)
+    }
+    
+    //Notify the user when data is saved
+    func notifyUser(notification: NSNotification){
+        print("User notified")
+        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
+        controller.delegate = self
+        controller.delegate?.notify("Data has been saved")
     }
     
     //When the view is about to appear, make the status invisable until the a candidate is created

@@ -24,7 +24,6 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
     //NSNotificationCenter.defaultCenter().postNotificationName("addCandidateNotification", object: nil)
 
     
-    
     //Button that takes the user to the add candidate screen
     @IBAction func addCandidateButton(sender: AnyObject) {
         self.performSegueWithIdentifier("AddCandidate", sender: self)
@@ -60,12 +59,16 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
     func addCandidate(notification: NSNotification){
         //let dict = notification.object as! NSDictionary
         print("Add candidate notification")
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("notifyNotification", object: nil)
     }
     
     //Add vote notification
     func addVote(notification: NSNotification){
-        //let dict = notification.object as! NSDictionary
-        print("Add vote notification")
+        let id = notification.object as! Int
+        deviceStorage.addVote(candidateManager.candidates[id],id: Int64(id))
+        
+        print("voting")
     }
     
     //Helper function that creates a popover
