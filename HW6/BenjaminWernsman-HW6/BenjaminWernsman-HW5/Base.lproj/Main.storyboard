@@ -11,7 +11,7 @@
         <!--Candidate Manager-->
         <scene sceneID="ldn-OJ-mBU">
             <objects>
-                <viewController storyboardIdentifier="CandidateManager" useStoryboardIdentifierAsRestorationIdentifier="YES" id="twr-MR-6Wz" customClass="CandidateManager" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CandidateManager" useStoryboardIdentifierAsRestorationIdentifier="YES" id="twr-MR-6Wz" customClass="CandidateManager" customModule="BenjaminWernsman_HW6" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7gX-ME-SAp"/>
                         <viewControllerLayoutGuide type="bottom" id="M9b-AG-Bsq"/>
@@ -94,7 +94,7 @@
         <!--Add Candidate-->
         <scene sceneID="tnR-bY-e6o">
             <objects>
-                <viewController id="CjI-CP-gjS" customClass="AddCandidate" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CjI-CP-gjS" customClass="AddCandidate" customModule="BenjaminWernsman_HW6" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WwY-ZE-5lz"/>
                         <viewControllerLayoutGuide type="bottom" id="tu2-E9-yXj"/>
@@ -208,7 +208,7 @@
         <!--Popover-->
         <scene sceneID="RLl-C4-MhT">
             <objects>
-                <viewController storyboardIdentifier="popoverID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eyF-7w-SIi" userLabel="Popover" customClass="PopOver" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popoverID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eyF-7w-SIi" userLabel="Popover" customClass="PopOver" customModule="BenjaminWernsman_HW6" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aUm-Bn-5aT"/>
                         <viewControllerLayoutGuide type="bottom" id="uFW-Zq-uGc"/>
@@ -254,7 +254,7 @@
         <!--Show Candidates-->
         <scene sceneID="ke7-hD-2t1">
             <objects>
-                <viewController storyboardIdentifier="ShowCandidates" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BTN-ma-rkk" customClass="ShowCandidates" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowCandidates" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BTN-ma-rkk" customClass="ShowCandidates" customModule="BenjaminWernsman_HW6" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fH5-QF-yho"/>
                         <viewControllerLayoutGuide type="bottom" id="GQp-MB-1IW"/>
@@ -314,7 +314,7 @@
         <!--Candidate Detail-->
         <scene sceneID="Vlb-T3-jhL">
             <objects>
-                <viewController id="Nt7-Pj-G9q" customClass="CandidateDetail" customModule="BenjaminWernsman_HW5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Nt7-Pj-G9q" customClass="CandidateDetail" customModule="BenjaminWernsman_HW6" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYt-I1-Nao"/>
                         <viewControllerLayoutGuide type="bottom" id="QOL-eC-bvH"/>

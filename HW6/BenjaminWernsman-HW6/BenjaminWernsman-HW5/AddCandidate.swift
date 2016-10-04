@@ -32,6 +32,8 @@ class AddCandidate: UIViewController, DataModelProtocol {
         
         if(first_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && last_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && state.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""){
             
+            NSNotificationCenter.defaultCenter().postNotificationName("addCandidateNotification", object: nil)
+            
             deviceStorage.updateModel(first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0, callback: { (success) in
                 if(success){
                     self.status.alpha = 1.0

@@ -20,6 +20,10 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
     
     var delegate: DataModelProtocol?
     
+    //Called from other function
+    //NSNotificationCenter.defaultCenter().postNotificationName("addCandidateNotification", object: nil)
+
+    
     
     //Button that takes the user to the add candidate screen
     @IBAction func addCandidateButton(sender: AnyObject) {
@@ -43,10 +47,25 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
         super.viewDidLoad()
         self.title = "Candidate Manager"
         deviceStorage.loadModel()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CandidateManager.addCandidate(_:)),name:"addCandidateNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CandidateManager.addVote(_:)),name:"addVoteNotification", object: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //Add candidate notification
+    func addCandidate(notification: NSNotification){
+        //let dict = notification.object as! NSDictionary
+        print("Add candidate notification")
+    }
+    
+    //Add vote notification
+    func addVote(notification: NSNotification){
+        //let dict = notification.object as! NSDictionary
+        print("Add vote notification")
     }
     
     //Helper function that creates a popover
