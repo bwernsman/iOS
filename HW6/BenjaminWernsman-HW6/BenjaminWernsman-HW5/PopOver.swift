@@ -79,17 +79,13 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate, Dat
         let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
         controller.delegate = self
         
-        NSNotificationCenter.defaultCenter().postNotificationName("voteNotification", object: nil)
         
         //If they can vote lets count it
         if(candidateManager.fromView == "vote"){
             if(candidateManager.candidates[indexPath.row].votes < 1){
-                candidateManager.candidates[indexPath.row].addVote()
-                deviceStorage.addVote(candidateManager.candidates[indexPath.row],id: Int64(indexPath.row))
-                
-                
+                let index:Int = indexPath.row
+                NSNotificationCenter.defaultCenter().postNotificationName("voteNotification", object: index)
                 controller.delegate?.notify("Data has been saved")
-            
             }
             else{
                 controller.delegate?.notify("You can only vote for a candidate once!")

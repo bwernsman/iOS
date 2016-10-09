@@ -63,9 +63,14 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
     
     //Notify the user when data is saved
     func notifyVote(notification: NSNotification){
-        print("User notified")
+        let index:Int = notification.object as! Int
         
-        
+        candidateManager.candidates[index].addVote()
+        deviceStorage.addVote(candidateManager.candidates[index],id: Int64(index), callback: { (success) in
+            print("got here")
+            print(success)
+            //NSNotificationCenter.defaultCenter().postNotificationName("alert", object: success)
+        })
     }
     
     //Helper function that creates a popover

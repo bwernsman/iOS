@@ -24,13 +24,12 @@ class AddCandidate: UIViewController, DataModelProtocol {
     //Use trimming to make sure the user does not enter a name with only spaces Ex: " " is not a name
     //If successfull, add the candidate to the model
     //If error, alert the user there is a problem
+    //Notify the main class to add the candidate to persistant storage
     @IBAction func saveButton(sender: AnyObject) {
         let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
         controller.delegate = self
         
         if(first_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && last_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && state.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""){
-            
-            //notify user
             
             let newCandidate:Candidate = Candidate(first_name: first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0, id: -1)
             
@@ -52,11 +51,14 @@ class AddCandidate: UIViewController, DataModelProtocol {
     //Notify the user when data is saved
     func notifyAlert(notification: NSNotification){
         let success:Bool = notification.object as! Bool
+        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
+        controller.delegate = self
+        
         if(success){
-            notify("Data has been saved")
+            controller.delegate?.notify("Data has been saved")
         }
         else{
-            notify("Error storing data to persistent storage")
+            controller.delegate?.notify("Error storing data to persistent storage")
         }
     }
     

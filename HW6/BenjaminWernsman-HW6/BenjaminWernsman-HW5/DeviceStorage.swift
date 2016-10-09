@@ -15,7 +15,7 @@ import UIKit
 class DeviceStorage {
     
     //Finds the candidate and then updates their vote count
-    func addVote(voteCandidate:Candidate, id:Int64){
+    func addVote(voteCandidate:Candidate, id:Int64, callback: (Bool) -> ()){
         let fetchedResults = retrievePeople()
         for person in fetchedResults {
             if(person.valueForKey("id") != nil ){
@@ -25,10 +25,13 @@ class DeviceStorage {
                         person.setValue(Int(voteCandidate.votes), forKey: "votes")
                         do {
                             try person.managedObjectContext?.save()
+                            return callback(true)
                         } catch {
                             let saveError = error as NSError
                             print(saveError)
+                            return callback(false)
                         }
+                        
                     }
                 }
             }
