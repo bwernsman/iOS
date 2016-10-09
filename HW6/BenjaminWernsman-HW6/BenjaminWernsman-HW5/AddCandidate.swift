@@ -13,8 +13,6 @@ import UIKit
 
 class AddCandidate: UIViewController, DataModelProtocol {
     
-    //var delegate: DataModelProtocol? = nil
-    
     //Outlets for all the user inputs needed to create a candidate
     @IBOutlet weak var first_name: UITextField!
     @IBOutlet weak var last_name: UITextField!
@@ -32,17 +30,11 @@ class AddCandidate: UIViewController, DataModelProtocol {
         
         if(first_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && last_name.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != "" && state.text?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) != ""){
             
-            NSNotificationCenter.defaultCenter().postNotificationName("addCandidateNotification", object: nil)
+            //notify user
             
-            deviceStorage.updateModel(first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0, callback: { (success) in
-                if(success){
-                    self.status.alpha = 1.0
-                    self.status.text = "Candidate saved"
-                }
-                else{
-                    controller.delegate?.notify("Error storing data to persistent storage")
-                }
-            })
+            let newCandidate:Candidate = Candidate(first_name: first_name.text!,last_name: last_name.text!,state: state.text!, party: party.titleForSegmentAtIndex(party.selectedSegmentIndex)!,votes: 0, id: -1)
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("notifyAddUserNotification", object: newCandidate)
             
         }else{
             controller.delegate?.notify("Please enter valid input")
@@ -54,15 +46,18 @@ class AddCandidate: UIViewController, DataModelProtocol {
         super.viewDidLoad()
         self.title = "Add Candidate"
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AddCandidate.notifyUser(_:)),name:"notifyNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AddCandidate.notifyAlert(_:)),name:"alert", object: nil)
     }
     
     //Notify the user when data is saved
-    func notifyUser(notification: NSNotification){
-        print("User notified")
-        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
-        controller.delegate = self
-        controller.delegate?.notify("Data has been saved")
+    func notifyAlert(notification: NSNotification){
+        let success:Bool = notification.object as! Bool
+        if(success){
+            notify("Data has been saved")
+        }
+        else{
+            notify("Error storing data to persistent storage")
+        }
     }
     
     //When the view is about to appear, make the status invisable until the a candidate is created
@@ -74,6 +69,7 @@ class AddCandidate: UIViewController, DataModelProtocol {
         super.didReceiveMemoryWarning()
     }
     
+    //Dispatch an alert with the given message
     func notify(message:String){
         dispatch_async(dispatch_get_main_queue()){
             self.showAlert("Alert",message: message)

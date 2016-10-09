@@ -11,7 +11,7 @@
 import Foundation
 import UIKit
 
-class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate  {
+class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate, DataModelProtocol  {
     
     //Connect the tableview to the storyboard
     @IBOutlet weak var tableView: UITableView!
@@ -65,20 +65,34 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate  {
         return cell
     }
     
+    //Dispatch an alert with the given message
+    func notify(message:String){
+        dispatch_async(dispatch_get_main_queue()){
+            self.showAlert("Alert",message: message)
+        }
+    }
+    
     //When a row is tapped, collect the info and store it so we can pass it to the next view
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
+        controller.delegate = self
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("voteNotification", object: nil)
         
         //If they can vote lets count it
         if(candidateManager.fromView == "vote"){
             if(candidateManager.candidates[indexPath.row].votes < 1){
                 candidateManager.candidates[indexPath.row].addVote()
-                let id = indexPath.row
-                NSNotificationCenter.defaultCenter().postNotificationName("addVoteNotification", object: id)
-                //showAlert("Vote Casted", message: "You voted for " + candidateManager.candidates[indexPath.row].getName())
+                deviceStorage.addVote(candidateManager.candidates[indexPath.row],id: Int64(indexPath.row))
+                
+                
+                controller.delegate?.notify("Data has been saved")
+            
             }
             else{
-                showAlert("ERROR", message: "You can only vote for a candidate once!")
+                controller.delegate?.notify("You can only vote for a candidate once!")
             }
         }
     }

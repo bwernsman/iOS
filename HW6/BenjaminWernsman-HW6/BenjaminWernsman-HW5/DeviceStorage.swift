@@ -33,8 +33,6 @@ class DeviceStorage {
                 }
             }
         }
-        
-        NSNotificationCenter.defaultCenter().postNotificationName("notifyNotification", object: nil)
     }
     
     //Adds a new candidate to persistant storage and adds them to the internal array for faster access

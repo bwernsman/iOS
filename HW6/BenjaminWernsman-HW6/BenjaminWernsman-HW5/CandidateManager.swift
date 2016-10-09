@@ -20,9 +20,6 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
     
     var delegate: DataModelProtocol?
     
-    //Called from other function
-    //NSNotificationCenter.defaultCenter().postNotificationName("addCandidateNotification", object: nil)
-
     
     //Button that takes the user to the add candidate screen
     @IBAction func addCandidateButton(sender: AnyObject) {
@@ -41,34 +38,34 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
         presentPopOver(sender)
     }
     
-    //Set the title when the view loads, and load all the candidates from persistant disk
+    //Set the title when the view loads, and load all the candidates from persistant disk, and set notification listeners
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Candidate Manager"
         deviceStorage.loadModel()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CandidateManager.addCandidate(_:)),name:"addCandidateNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CandidateManager.addVote(_:)),name:"addVoteNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CandidateManager.notifyAddUser(_:)),name:"notifyAddUserNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CandidateManager.notifyVote(_:)),name:"voteNotification", object: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    //Add candidate notification
-    func addCandidate(notification: NSNotification){
-        //let dict = notification.object as! NSDictionary
-        print("Add candidate notification")
+    //Notify the user when data is saved
+    func notifyAddUser(notification: NSNotification){
+        let newCandidate:Candidate = notification.object as! Candidate
         
-        NSNotificationCenter.defaultCenter().postNotificationName("notifyNotification", object: nil)
+        deviceStorage.updateModel(newCandidate.first_name,last_name: newCandidate.last_name,state: newCandidate.state, party: newCandidate.party,votes: 0, callback: { (success) in
+            NSNotificationCenter.defaultCenter().postNotificationName("alert", object: success)
+        })
     }
     
-    //Add vote notification
-    func addVote(notification: NSNotification){
-        let id = notification.object as! Int
-        deviceStorage.addVote(candidateManager.candidates[id],id: Int64(id))
+    //Notify the user when data is saved
+    func notifyVote(notification: NSNotification){
+        print("User notified")
         
-        print("voting")
+        
     }
     
     //Helper function that creates a popover
@@ -93,5 +90,4 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
         backButton.title = "Back"
         navigationItem.backBarButtonItem = backButton
     }
-
 }
