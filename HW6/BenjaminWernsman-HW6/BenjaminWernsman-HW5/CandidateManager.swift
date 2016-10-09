@@ -1,6 +1,6 @@
 //
 //  CandidateManager.swift
-//  WernsmanBenjamin-HW5
+//  WernsmanBenjamin-HW6
 //  EID:  bw22494
 //  Course:  CS378
 //
@@ -52,24 +52,22 @@ class CandidateManager: UIViewController, UIPopoverPresentationControllerDelegat
         super.didReceiveMemoryWarning()
     }
     
+    //Notification handler when a new user is added
     //Notify the user when data is saved
     func notifyAddUser(notification: NSNotification){
         let newCandidate:Candidate = notification.object as! Candidate
-        
         deviceStorage.updateModel(newCandidate.first_name,last_name: newCandidate.last_name,state: newCandidate.state, party: newCandidate.party,votes: 0, callback: { (success) in
             NSNotificationCenter.defaultCenter().postNotificationName("alert", object: success)
         })
     }
     
+    //Notification handler when a new vote is placed
     //Notify the user when data is saved
     func notifyVote(notification: NSNotification){
         let index:Int = notification.object as! Int
-        
         candidateManager.candidates[index].addVote()
         deviceStorage.addVote(candidateManager.candidates[index],id: Int64(index), callback: { (success) in
-            print("got here")
-            print(success)
-            //NSNotificationCenter.defaultCenter().postNotificationName("alert", object: success)
+            NSNotificationCenter.defaultCenter().postNotificationName("alertVote", object: success)
         })
     }
     

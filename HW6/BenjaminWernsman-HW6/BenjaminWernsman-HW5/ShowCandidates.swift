@@ -1,6 +1,6 @@
 //
 //  ShowCandidates.swift
-//  WernsmanBenjamin-HW5
+//  WernsmanBenjamin-HW6
 //  EID:  bw22494
 //  Course:  CS378
 //

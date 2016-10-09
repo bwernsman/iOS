@@ -1,6 +1,6 @@
 //
 //  PopOver.swift
-//  WernsmanBenjamin-HW5
+//  WernsmanBenjamin-HW6
 //  EID:  bw22494
 //  Course:  CS378
 //
@@ -24,6 +24,8 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate, Dat
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PopOver.notifyAlert(_:)),name:"alertVote", object: nil)
     }
     
     //Every time the view is about to appear, reload the table to make sure the info is up to date
@@ -37,6 +39,20 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate, Dat
             NoCandidateLabel.textAlignment = NSTextAlignment.Center
             NoCandidateLabel.text = "No candidates"
             self.view.addSubview(NoCandidateLabel)
+        }
+    }
+    
+    //Notify the user when data is saved
+    func notifyAlert(notification: NSNotification){
+        let success:Bool = notification.object as! Bool
+        let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
+        controller.delegate = self
+        
+        if(success){
+            controller.delegate?.notify("Data has been saved")
+        }
+        else{
+            controller.delegate?.notify("Error storing data to persistent storage")
         }
     }
     
@@ -73,19 +89,18 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate, Dat
     }
     
     //When a row is tapped, collect the info and store it so we can pass it to the next view
+    //Pass the index to the mainVC so we can register the users vote
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
         controller.delegate = self
         
-        
         //If they can vote lets count it
         if(candidateManager.fromView == "vote"){
             if(candidateManager.candidates[indexPath.row].votes < 1){
                 let index:Int = indexPath.row
                 NSNotificationCenter.defaultCenter().postNotificationName("voteNotification", object: index)
-                controller.delegate?.notify("Data has been saved")
             }
             else{
                 controller.delegate?.notify("You can only vote for a candidate once!")
@@ -99,5 +114,4 @@ class PopOver: UIViewController, UITableViewDataSource, UITableViewDelegate, Dat
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-
 }

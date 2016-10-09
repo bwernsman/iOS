@@ -1,6 +1,6 @@
 //
 //  AddCandidate.swift
-//  WernsmanBenjamin-HW5
+//  WernsmanBenjamin-HW6
 //  EID:  bw22494
 //  Course:  CS378
 //
@@ -41,19 +41,19 @@ class AddCandidate: UIViewController, DataModelProtocol {
     }
     
     //Set the title when the view loads
+    //Add a handler for the alert view to be called
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Add Candidate"
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AddCandidate.notifyAlert(_:)),name:"alert", object: nil)
     }
     
+    //Determine if we should tell the user that the data was saved correctly or not
     //Notify the user when data is saved
     func notifyAlert(notification: NSNotification){
         let success:Bool = notification.object as! Bool
         let controller = CandidateManager(nibName: "CandidateManager", bundle: nil)
         controller.delegate = self
-        
         if(success){
             controller.delegate?.notify("Data has been saved")
         }

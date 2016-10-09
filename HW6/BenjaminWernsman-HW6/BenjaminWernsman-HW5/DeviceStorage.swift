@@ -1,6 +1,6 @@
 //
 //  DeviceStorage.swift
-//  BenjaminWernsman-HW5
+//  BenjaminWernsman-HW6
 //  EID:  bw22494
 //  Course:  CS378
 //
