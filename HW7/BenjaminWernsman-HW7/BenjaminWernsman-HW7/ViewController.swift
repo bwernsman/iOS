@@ -50,7 +50,6 @@ class ViewController: UIViewController, SkiAreaDataProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.skiAreaData.delegate = self
-        self.view.backgroundColor = UIColor(red: 149/255, green: 237/255, blue: 252/255, alpha: 1)
     }
     
     //When the view appears, hide the indicator and message label

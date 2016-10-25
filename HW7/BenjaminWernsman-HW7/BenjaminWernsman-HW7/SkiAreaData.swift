@@ -20,6 +20,7 @@ protocol SkiAreaDataProtocol
     func responseError(message:String)
 }
 
+//Set the delegate and the base URL
 class SkiAreaData{
     var delegate:SkiAreaDataProtocol? = nil
     let baseURL:String = "http://api.worldweatheronline.com/premium/v1/search.ashx?key=61f49239748e494bb2b231223161310&format=json&wct=Ski&q="
